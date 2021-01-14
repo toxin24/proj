@@ -1,11 +1,12 @@
 ---
 - name: simple command
+  hosts: all 
   tasks:
-  - name: this
-    command: uname -a
-    register: out
-  - debug: var=out.stdout_lines
-  - name: os type
-    shell: cat /etc/*release
-    register: type
-  - debug: var=type.stdout_lines
+   - name: this
+     command: uname -a
+     register: out
+   - debug: var=out.stdout_lines
+   - name: os type
+     shell: cat /etc/*release
+     register: type
+   - debug: var=type.stdout_lines
